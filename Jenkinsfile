@@ -26,6 +26,7 @@ stages
     steps
     {
       echo "first test run"
+      echo "building test with version ${NEW_Version}"
     }
   }
 }
