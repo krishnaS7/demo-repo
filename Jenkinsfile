@@ -1,13 +1,25 @@
 pipeline
 {
 agent any
+enviornment
+  {
+    NEW_Version = '1.0'
+  }
 stages
 {
 stage("build")
+  when 
+  {
+    expression
+    {
+      BRANCH_NAME == 'dev'
+    }
+  }
   {
     steps
     {
       echo "first build run"
+      echo "building test with version ${NEW_Version}"
     }
   }
  stage("test")
