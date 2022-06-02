@@ -22,7 +22,8 @@ stages
     steps
     {
       echo "first build run"
-      echo "building test with version ${NEW_Version}"
+      echo "building with env version ${NEW_Version}"
+      echo "building with choosen version ${params.Version}"
       echo "Branch name is ${BRANCH_NAME}"
     }
   }
@@ -32,13 +33,14 @@ stages
   {
     expression
     {
-      paarams.executeTests
+      params.executeTests
     }
   }
     steps
     {
       echo "first test run"
       echo "building test with version ${NEW_Version}"
+      echo "building test with choice ${params.executeTests}"
     }
   }
 }
