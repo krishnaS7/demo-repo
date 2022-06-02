@@ -7,7 +7,14 @@ stage("build")
   {
     steps
     {
-      echo "first run"
+      echo "first build run"
+    }
+  }
+ stage("test")
+  {
+    steps
+    {
+      echo "first test run"
     }
   }
 }
