@@ -5,6 +5,10 @@ environment
   {
     NEW_Version = '1.0'
   }
+  parameters{
+  choice(name:'Version',choices:['1.0','2.0','3.0'],description:'')
+  booleanParam(name:'executeTests',defaultValue:true,description:'')
+  }
 stages
 {
   stage("build"){
@@ -24,6 +28,13 @@ stages
   }
  stage("test")
   {
+    when 
+  {
+    expression
+    {
+      paarams.executeTests
+    }
+  }
     steps
     {
       echo "first test run"
