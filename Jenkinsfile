@@ -12,13 +12,14 @@ stages
   {
     expression
     {
-      BRANCH_NAME == 'dev'
+      BRANCH_NAME == 'dev' || BRANCH_NAME == 'main' 
     }
   }
     steps
     {
       echo "first build run"
       echo "building test with version ${NEW_Version}"
+      echo "Branch name is ${BRANCH_NAME}"
     }
   }
  stage("test")
