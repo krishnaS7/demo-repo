@@ -15,8 +15,6 @@ stages
       BRANCH_NAME == 'dev'
     }
   }
-  }
-  {
     steps
     {
       echo "first build run"
