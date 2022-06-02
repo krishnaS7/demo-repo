@@ -1,19 +1,20 @@
 pipeline
 {
 agent any
-enviornment
+environment
   {
     NEW_Version = '1.0'
   }
 stages
 {
-stage("build")
+  stage("build"){
   when 
   {
     expression
     {
       BRANCH_NAME == 'dev'
     }
+  }
   }
   {
     steps
